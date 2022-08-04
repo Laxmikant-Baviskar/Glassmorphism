@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism</title>
+</head>
+
+<style>
+    /* ~~~~~~~~~~~~~ Container-1 ~~~~~~~~~~~~~ */
+
+    body {
+        background-color: rgb(0, 0, 0);
+    }
+
+
+    .card1 {
+        width: 150px;
+        height: 200px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* .card1:hover {
+        transform: translateY(0%);
+        transform: scale(0.8);
+        transition: .8s .2s;
+    } */
+
+    .card-inner {
+        width: inherit;
+        height: inherit;
+        background-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+    }
+
+    .circle-1 {
+        width: 100px;
+        height: 100px;
+        /* background:  linear-gradient(180deg, #0F0FC2 0%, #302B63 100%); */
+        /* background: linear-gradient(180deg, #52006F 0%, #FF00D6 80.83%); */
+        background: linear-gradient(180deg, #CCFF00 6.08%, #24FF00 48.97%, #00C914 100%);
+        border-radius: 50%;
+        position: absolute;
+        animation: move-up 2s ease-in infinite alternate-reverse;
+    }
+
+    .circle-2 {
+        width: 100px;
+        height: 100px;
+        /* background:  linear-gradient(180deg, #0F0FC2 0%, #302B63 100%); */
+        background: linear-gradient(180deg, #52006F 0%, #FF00D6 80.83%);
+        /* background:  linear-gradient(180deg, #CCFF00 6.08%, #24FF00 48.97%, #00C914 100%); */
+        border-radius: 50%;
+        position: absolute;
+        animation: move-down 2s ease-in infinite alternate-reverse;
+    }
+
+    .circle-1:nth-child(1) {
+        top: -25px;
+        left: -25px;
+    }
+
+    .circle-2:nth-child(2) {
+        bottom: -25px;
+        right: -25px;
+        animation-name: move-down;
+    }
+
+    @keyframes move-up {
+        to {
+            transform: translateY(-25px);
+        }
+    }
+
+    @keyframes move-down {
+        from {
+            transform: translateY(25px);
+        }
+    }
+
+
+    /* ~~~~~~~~~~~~~ Container-2 ~~~~~~~~~~~~~ */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* html, */
+    container-2 {
+        height: 100%;
+    }
+
+    body-3 {
+        display: grid;
+        place-content: center;
+        align-items: center;
+        font-family: "nunito", sans-serif;
+        background-color: #0099ff;
+    }
+
+    .card {
+        position: relative;
+        padding: 42px 32px;
+        clip-path: circle(4% at 95% 15%);
+        transition: all ease-in-out 0.3s;
+        background-color: #ffffff;
+    }
+
+    .card__infoicon {
+        position: absolute;
+        top: 1px;
+        right: 60px;
+        font-size: 4em;
+        color: #00ff4c;
+        transition: ease-out 2s;
+    }
+
+    .card__title {
+        margin: 0;
+        font-size: 3em;
+        line-height: 1.8;
+        color: white;
+    }
+
+    .card__description {
+        margin: 0;
+        font-size: 1.2em;
+        line-height: 1.6;
+        font-weight: 500;
+        color: white;
+    }
+
+    .card__credits {
+        margin: 0;
+        padding: 4px 0;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: white;
+    }
+
+    .card__reference {
+        display: inline-block;
+        border-bottom: 1px solid transparent;
+        color: #0099ff;
+        text-decoration: none;
+        transition: ease-in 0.3s;
+    }
+
+    .card__reference:hover {
+        border-bottom-color: #0099ff;
+    }
+
+    .card:hover,
+    .card:focus {
+        clip-path: circle(75%);
+        border-radius: 20px;
+        /* box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.12), 0px 3px 18px rgba(0, 0, 0, 0.08); */
+        /* background: #404040; */
+        background:  linear-gradient(180deg, #0F0FC2 0%, #060047 100%);
+
+        outline: none;
+    }
+
+    .card:hover .card__infoicon,
+    .card:focus .card__infoicon {
+        opacity: 0;
+    }
+
+    .card:focus {
+        box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.12), 0px 3px 18px rgba(0, 0, 0, 0.08), 0px 0px 0px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .paragraph{
+        margin-left: 15%;
+    }
+
+</style>
+
+<body>
+    <center>
+        <container-1>
+
+            <article class="card1" style="margin: 10vh;">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="card-inner"></div>
+            </article>
+
+        </container-1>
+    </center>
+
+    <container-2>
+
+        <div class="card" tabindex="0">
+            <span class="card__infoicon">
+                <i class="fa fa-info">i</i>
+            </span>
+
+            <div class="paragraph">
+                <h1 class="card__title">What is Glassmorphism</h1>
+                <p class="card__description">Glassmorphism UI is a card-based interface used for designing the user interface of websites, smartphones, web app, mobile apps, etc. <br> It is based on three important
+                    effects: transparency (frosted-glass), vivid or pastel colors, and a light border.</p>
+            
+
+            <p class="card__credits">Thank you !</p>
+
+        </div>
+
+        </div>
+
+    </container-2>
+
+</body>
+
+</html>
